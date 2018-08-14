@@ -6,7 +6,7 @@ This analyzes a directed graph and yields the graph's nodes in
 reverse-topologically sorted order, grouped into strongly connected
 components. In other words, it groups nodes together that refer to
 each other with cycle(s), and orders the groups so that every group
-only refers to nodes appearing in earlier groups.
+only refers to nodes appearing in later groups.
 
 For a nice overview of the algorithm, see Vaibhav Sagar's
 ["An All-in-One DAG Toolkit"][1] post.
