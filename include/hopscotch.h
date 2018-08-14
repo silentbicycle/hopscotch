@@ -5,10 +5,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-/* Version 0.1.0. */
+/* Version 0.1.1. */
 #define HOPSCOTCH_VERSION_MAJOR 0
 #define HOPSCOTCH_VERSION_MINOR 1
-#define HOPSCOTCH_VERSION_PATCH 0
+#define HOPSCOTCH_VERSION_PATCH 1
 #define HOPSCOTCH_AUTHOR "Scott Vokes <vokes.s@gmail.com>"
 
 /* Opaque handle to a Tarjan's Strongly-Connected Components solver */
