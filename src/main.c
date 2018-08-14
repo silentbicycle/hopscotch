@@ -149,7 +149,7 @@ static void print_cb(uint32_t group_id,
 
             for (size_t s_i = 0; s_i < succ_count; s_i++) {
                 const uint32_t edge_id = successors[s_i];
-                printf("%sn%u -> n%u\n", indent, edge_id, root_id);
+                printf("%sn%u -> n%u\n", indent, root_id, edge_id);
             }
         }
 
