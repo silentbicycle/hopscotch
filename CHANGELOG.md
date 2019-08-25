@@ -4,7 +4,8 @@
 
 ### Bug Fixes
 
-None.
+The `skiplist` library is no longer a dependency, so remove linking it
+from the makefile. (Reported by @hselasky.)
 
 
 ## v0.1.1 - 2018-08-14
