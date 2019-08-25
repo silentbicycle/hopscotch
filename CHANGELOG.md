@@ -1,5 +1,12 @@
 # hopscotch Changes By Release
 
+## v0.1.2 - 2019-xx-xx
+
+### Bug Fixes
+
+None.
+
+
 ## v0.1.1 - 2018-08-14
 
 ### Bug Fixes
