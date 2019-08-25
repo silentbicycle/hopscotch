@@ -21,7 +21,7 @@ CSTD +=		-std=c99 #-D_POSIX_C_SOURCE=200112L -D_C99_SOURCE
 CFLAGS +=	${CSTD} -g ${WARN} ${CDEFS} ${CINCS} ${OPTIMIZE}
 
 LDFLAGS +=
-MAIN_LDFLAGS += ${LDFLAGS} -lskiplist -L${BUILD} -lhopscotch
+MAIN_LDFLAGS += ${LDFLAGS} -L${BUILD} -lhopscotch
 
 TEST_CFLAGS = 	${CFLAGS}
 TEST_LDFLAGS =  ${LDFLAGS} -ltheft

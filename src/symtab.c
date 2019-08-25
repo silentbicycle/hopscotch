@@ -117,7 +117,8 @@ symtab_intern(struct symtab *s, uint8_t len, const uint8_t *str,
      * */
     const uint64_t hash = get_hash(len, str);
 
-    size_t b_id = (hash & s->bucket_bits);
+    const uint64_t bucket_count = 1LLU << s->bucket_bits;
+    const size_t b_id = hash & (bucket_count - 1);
     struct bucket *b = &s->buckets[b_id];
 
     size_t i = 0;
@@ -145,11 +146,15 @@ symtab_intern(struct symtab *s, uint8_t len, const uint8_t *str,
         b->symbols = symbols;
         b->symbols_ceil = s->def_bucket_symbols_ceil;
     } else if (i == symbols_count) {    /* grow vector */
-        const uint8_t nceil = s->symbols_ceil + 1;
+        const uint8_t nceil = b->symbols_ceil + 1;
         const size_t ncount = (1LLU << nceil);
         struct symtab_symbol **nsymbols = realloc(b->symbols,
             ncount * sizeof(*nsymbols));
         if (nsymbols == NULL) { return SYMTAB_INTERN_ERROR_MEMORY; }
+        for (size_t n_i = ncount/2; n_i < ncount; n_i++) {
+            nsymbols[n_i] = NULL; /* init realloc'd memory */
+        }
+
         b->symbols = nsymbols;
         b->symbols_ceil = nceil;
     } else {
